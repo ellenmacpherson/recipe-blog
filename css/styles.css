@@ -7,6 +7,7 @@
 body {
     min-height: 100vh;
     max-width: 100vw;
+    font-family: var(--accent-font);
 
 }
 
@@ -17,12 +18,30 @@ body {
     font-size: 16px;
 }
 
+li {
+    list-style: none;
+    display: inline-flex;
+}
+
+h4 {
+    font-family: var(--primary-font);
+}
+
+a {
+    color: var(--primary-font-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: overline;
+}
+
 .grid-container {
   max-width: 100vw;
-  max-height: 400vh;
+  /* max-height: 400vh; */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 0.3fr 3fr 2fr 3fr 2fr;
+  grid-template-rows: repeat(5, auto);
   grid-template-areas: "navigation navigation navigation" "header header header" "intro intro intro" "blog recipes contact" "footer footer footer";
   color: var(--primary-font-color);
 }
@@ -33,11 +52,11 @@ body {
   align-items: center;
   font-family: var(--primary-font);
   grid-gap: unset;
+  height: 8vh;
 }
 
 .navigation h1 {
     text-transform: uppercase;
-    width: fit-content;
     font-size: 1.2em;
     margin-left: 20px;
 }
@@ -45,24 +64,12 @@ body {
 .navigation .menu {
     display: inline-flex;
     justify-self: end;
-    list-style: none;
     grid-column: 3;
     margin-right: 50px;
 }
 
-.navigation a {
-    color: var(--primary-font-color);
-    text-decoration: none;
-}
-
-.navigation a:hover {
-    text-decoration: overline;
-}
-
 .menu a {
     padding: 0px 0px 0px 20px;
-    text-decoration: none;
-    color: var(--primary-font-color);
     font-weight: 300;
     font-size: 1.2rem;
 }
@@ -74,9 +81,11 @@ body {
 
 .header {
   display: grid;
+  display: -ms-grid;
   grid-template-rows: 1fr 1fr 1fr; 
   grid-template-columns: 1fr 1fr 1fr; 
   grid-area: header;
+  height: 75vh;
   background: red;
   background-image: url('../images/spices.jpg');
   background-size: cover;
@@ -131,6 +140,7 @@ body {
     display: grid; 
     grid-template-rows: repeat(5, 1fr); 
     grid-template-columns: 1fr 3fr 1fr; 
+    height: 60vh;
 }
 
 .blog,
@@ -142,7 +152,6 @@ body {
 
 .blog {
     grid-area: blog;
-    height: 600px;
     background-image: url('../images/tomatoes.jpg');
     margin-left:1.5em;
 }
@@ -193,7 +202,8 @@ body {
 }
 .card-content:hover {
     transform: scale(1.1);
-    transition: ease-in 0.2s;
+    transition: ease;
+    transition-duration: 0.4s;
 }
 
 #recipe-card-content {
@@ -208,7 +218,42 @@ body {
     background-color: #223843;
 }
 
+.footer {
+    height: 30vh;
+    align-items: center;
+    display: grid;
+    display: -ms-grid;
+    grid-template-rows: 1fr; 
+    grid-template-columns: 1fr 1fr; 
+}
 
-div {
-    /* border: 1px solid black; */
+.footer h4 {
+    margin-top: 1.5em;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+.footer ul {
+    margin-top: 1em;
+}
+
+.footer-navigation {
+    margin-left: 1.5em;
+}
+
+.footer-navigation li {
+    font-family: var(--primary-font);
+    font-weight: 200;
+    padding-right: 10px;
+}
+
+.social {
+    justify-self: end;
+    text-align: right;
+    margin-right: 1.5em;
+}
+
+.social-icon-list-item img {
+    height: 30px;
+    margin-left: 10px;
 }
